@@ -1,1 +1,6 @@
-Writes Block, a fun wensite for writers who have writers block!
++------------------------------------------------------+
+|                                                      |
+|  Writers Block: A fun website for writers who have   |
+|                   writers' block!                    |
+|                                                      |
++------------------------------------------------------+
