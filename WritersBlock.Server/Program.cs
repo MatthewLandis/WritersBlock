@@ -1,30 +1,30 @@
-var builder = WebApplication.CreateBuilder(args);
+using WritersBlock.Server.Databases;
+using WritersBlock.Server.Services;
 
-// Add services to the container.
-
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ISql, Sql>();
 
+builder.Services.Configure<WritersBlock.Server.Settings>(builder.Configuration);
+
+builder.Services.AddCors(static options =>
+{
+    options.AddPolicy("AllowAngularApp", static policy =>
+    {
+        _ = policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+WebApplication app = builder.Build();
+
+app.UseCors("AllowAngularApp");
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.MapFallbackToFile("/index.html");
-
 app.Run();

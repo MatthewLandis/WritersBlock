@@ -1,0 +1,15 @@
+<header>
+  <img src="assets/WBTextLogo2.png" class="logo" onclick="window.location.href='/'" />
+  <nav>
+    <ul>
+      <li><a routerLink="/write">Write</a></li>
+      <li><a routerLink="/read">Read</a></li>
+      <li><a routerLink="/post">Post</a></li>
+    </ul>
+  </nav>
+    <button class="loginButton" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+    <div *ngIf="isLoggedIn">
+      <p>Profile: {{username}} </p>
+      <button (click)="logout()">Logout</button>
+    </div>
+</header>

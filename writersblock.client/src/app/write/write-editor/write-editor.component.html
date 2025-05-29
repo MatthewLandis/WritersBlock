@@ -1,0 +1,31 @@
+<div class="editor-container" [class.dark-mode]="darkMode">
+  <h2>Start Writing</h2>
+
+  <button (click)="toggleDarkMode()" class="textButton">
+    {{ darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}
+  </button>
+
+  <button (click)="getPrompt()" class="textButton">Get Writing Prompt</button>
+
+  <p *ngIf="currentPrompt" class="prompt">Prompt: "{{ currentPrompt }}"</p>
+
+<textarea [(ngModel)]="draftContent"
+          (input)="updateCounts()"
+          rows="15"
+          cols="80"
+          placeholder="Start writing your thoughts here..."></textarea>
+
+
+
+  <div class="word-count">
+    Words: {{ wordCount }} | Characters: {{ charCount }}
+  </div>
+
+  <button (click)="saveDraft()">Save Draft</button>
+  <button (click)="enhanceDraft()">Enhance My Draft ✨</button>
+</div>
+
+<div *ngIf="enhancedContent" class="enhanced-output">
+  <h3>Enhanced Draft</h3>
+  <p>{{ enhancedContent }}</p>
+</div>

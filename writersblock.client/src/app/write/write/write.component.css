@@ -1,0 +1,94 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+  background-color: #fdf6e3; /* Soft cream background */
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Editor area */
+.editor-container {
+  background-color: #fff;
+  border: 2px solid #4b9cd3;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  resize: vertical;
+  background-color: #faf0e6;
+  color: #333;
+}
+
+/* Button styles */
+button {
+  background: none;
+  border: 2px solid #4b9cd3;
+  color: #4b9cd3;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+  button:hover {
+    background-color: #4b9cd3;
+    color: white;
+  }
+
+/* Saved drafts section */
+.draft-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #faf0e6;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.draft-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+  .draft-item:last-child {
+    border-bottom: none;
+  }
+
+/* Enhanced output section */
+.enhanced-output {
+  background-color: #faf0e6;
+  border-left: 4px solid #4b9cd3;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+/* Typography */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #eee;
+  margin: 2rem 0;
+}

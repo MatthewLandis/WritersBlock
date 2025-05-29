@@ -1,0 +1,30 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: auto;
+  background-color: #f8f8f8;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 10; /* Same level as header */
+}
+
+.footer-left,
+.footer-right {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-nav a {
+  color: #4b9cd3;
+  transition: color 0.3s;
+}
+
+  .footer-nav a:hover {
+    color: #ff6f61;
+  }
