@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   username: string | null = '';
+  dropdownOpen = false;
 
   constructor(private router: Router) { }
 
@@ -25,8 +26,14 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('ID');
     localStorage.removeItem('USERNAME');
-
     this.isLoggedIn = false;
     this.username = null;
+    this.dropdownOpen = false;
+  }
+
+  goHome() {
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }

@@ -42,7 +42,7 @@ a {
     color: #ff6f61;
   }
 
-.loginButton {
+.profileButton {
   cursor: pointer;
   color: white;
   background-color: #4b9cd3;
@@ -50,6 +50,22 @@ a {
   transition: background-color 0.3s;
 }
 
-  .loginButton:hover {
+  button:hover {
     background-color: #ff6f61;
   }
+
+
+
+.profile-image {
+  display: block;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.mat-menu-panel {
+  background-color: red !important;
+}
+.mat-mdc-menu-content {
+  padding: 0 !important;
+}

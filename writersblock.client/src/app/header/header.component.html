@@ -1,5 +1,6 @@
 <header>
-  <img src="assets/WBTextLogo2.png" class="logo" onclick="window.location.href='/'" />
+  <img src="assets/WBTextLogo2.png" class="logo" (click)="goHome()" />
+
   <nav>
     <ul>
       <li><a routerLink="/write">Write</a></li>
@@ -7,9 +8,21 @@
       <li><a routerLink="/post">Post</a></li>
     </ul>
   </nav>
-    <button class="loginButton" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
-    <div *ngIf="isLoggedIn">
-      <p>Profile: {{username}} </p>
-      <button (click)="logout()">Logout</button>
+
+  <!--If user is NOT logged in-->
+  <button class="profileButton" *ngIf="!isLoggedIn" mat-button routerLink="/login">Login</button>
+
+  <!--If user is logged in-->
+  <div *ngIf="isLoggedIn">
+    <div [matMenuTriggerFor]="profileMenu" class="profile-trigger">
+      <img src="assets/placeholderProfile.png" alt="Profile" class="profile-image" />
     </div>
+
+    <!--Dropdown Menu-->
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item routerLink="/profile">My Profile</button>
+      <button mat-menu-item routerLink="/settings">Settings</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </div>
 </header>
