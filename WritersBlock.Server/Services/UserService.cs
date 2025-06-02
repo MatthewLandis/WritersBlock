@@ -18,11 +18,13 @@ namespace WritersBlock.Server.Services
                 "VALUES(@Username, @Email, @Password); SELECT SCOPE_IDENTITY()", request);
         }
 
-        public async Task<int> LoginUser(User request)
+        public async Task<User?> LoginUser(User request)
         {
             using Microsoft.Data.SqlClient.SqlConnection c = _sql.WBD;
-            return await c.QuerySingleOrDefaultAsync<int>(
-                "SELECT ID FROM Users WHERE Username = @Username AND Password = @Password", request);
+            User? userID = await c.QuerySingleOrDefaultAsync<User>(
+                "SELECT ID, Username FROM Users WHERE Username = @Username AND Password = @Password", request);
+
+            return userID ?? null;
         }
     }
 }

@@ -26,14 +26,14 @@ namespace writersblock.server.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User request)
         {
-            if (request == null || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+            if (request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
             {
                 return BadRequest("All fields are required.");
             }
 
-            int? user = await _userService.LoginUser(request);
+            User? userID = await _userService.LoginUser(request);
 
-            return user != null ? Ok(new { id = user }) : BadRequest("User already exists.");
+            return userID != null ? Ok(new { id = userID.ID, username = userID.Username }) : BadRequest("User already exists.");
         }
     }
 }
