@@ -1,28 +1,28 @@
 <header>
-  <img src="assets/WBTextLogo2.png" class="logo" (click)="goHome()" />
-
-  <nav>
-    <ul>
-      <li><a routerLink="/write">Write</a></li>
-      <li><a routerLink="/read">Read</a></li>
-      <li><a routerLink="/post">Post</a></li>
-    </ul>
-  </nav>
-
-  <!--If user is NOT logged in-->
-  <button class="profileButton" *ngIf="!isLoggedIn" mat-button routerLink="/login">Login</button>
-
-  <!--If user is logged in-->
-  <div *ngIf="isLoggedIn">
-    <div [matMenuTriggerFor]="profileMenu" class="profile-trigger">
-      <img src="assets/placeholderProfile.png" alt="Profile" class="profile-image" />
+  <div class="navbar">
+    <div class="link" routerLink="/write">Write</div>
+    <div class="link" routerLink="/read">Read</div>
+    <div class="link" routerLink="/tips">Tips</div>
+  </div>
+  <img src="assets/WBLogo.png" class="logo" (click)="goHome()" />
+  <div class="navbar">
+    <div class="link" routerLink="/post">Post</div>
+    <!--If user is NOT logged in-->
+    <div *ngIf="!isLoggedIn">
+      <div class="loginButton" routerLink="/login">Login</div>
     </div>
-
+    <!--If user is logged in-->
+    <div *ngIf="isLoggedIn">
+      <div class="profileButton" tabindex="0" (click)="openDropdown()" (blur)="closeDropdown()">
+        <img src="assets/placeholderProfile.png" class="profile-image" />
+        <mat-icon>{{ dropdownOpen ? 'expand_more' : 'expand_less' }}</mat-icon>
+      </div>
+    </div>
     <!--Dropdown Menu-->
-    <mat-menu #profileMenu="matMenu">
-      <button mat-menu-item routerLink="/profile">My Profile</button>
-      <button mat-menu-item routerLink="/settings">Settings</button>
-      <button mat-menu-item (click)="logout()">Logout</button>
-    </mat-menu>
+    <div *ngIf="dropdownOpen" class="dropdown-menu">
+      <a routerLink="/write"><mat-icon>face</mat-icon> My Profile</a>
+      <a routerLink="/settings"><mat-icon>settings</mat-icon> Settings</a>
+      <a (click)="logout()"><mat-icon>exit_to_app</mat-icon> Logout</a>
+    </div>
   </div>
 </header>

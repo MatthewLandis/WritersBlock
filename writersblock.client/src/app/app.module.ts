@@ -9,12 +9,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { WriteEditorComponent } from './write/write-editor/write-editor.component';
-import { DraftListComponent } from './write/draft-list/draft-list.component';
-import { EnhancedOutputComponent } from './write/enhanced-output/enhanced-output.component';
-import { WriteComponent } from './write/write/write.component';
+import { WriteComponent } from './write/write.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { SettingsComponent } from './settings/settings.component';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,12 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    WriteEditorComponent,
-    DraftListComponent,
-    EnhancedOutputComponent,
     WriteComponent,
     LoginComponent,
     SignupComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

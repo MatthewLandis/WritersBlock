@@ -1,71 +1,90 @@
-* {
-  all: unset;
-  text-decoration: none;
-  list-style: none;
+header {
+  font-family: 'Times New Roman';
   font-size: 18pt;
   font-weight: bold;
-}
-
-header {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   background-color: #faf0e6;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  cursor: pointer;
-  height: 100px;
+.navbar {
+  display: flex;
+  gap: 3rem;
+  color: #4b9cd3;
+  align-items: center;
 }
 
-nav {
+.link:hover {
+  cursor: pointer;
+  color: #ff6f61;
+  transition: color 0.3s;
+}
+
+.logo {
+  cursor: pointer;
+  height: 60px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-ul {
-  display: flex;
-  gap: 3rem;
-}
-
-a {
+.loginButton {
   cursor: pointer;
-  color: #4b9cd3;
-  transition: color 0.3s;
+  color: white;
+  background-color: #4b9cd3;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s;
 }
 
-  a:hover {
-    color: #ff6f61;
+  .loginButton:hover {
+    cursor: pointer;
+    background-color: #ff6f61;
   }
 
 .profileButton {
   cursor: pointer;
-  color: white;
-  background-color: #4b9cd3;
-  padding: 0.5rem;
-  transition: background-color 0.3s;
+  display: flex;
+  align-items: end;
 }
-
-  button:hover {
-    background-color: #ff6f61;
-  }
-
-
 
 .profile-image {
   display: block;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
+  height: 40px;
+  border-radius: 50%;
 }
 
-.mat-menu-panel {
-  background-color: red !important;
+.dropdown-menu {
+  position: absolute;
+  top: 4rem;
+  right: 5rem;
+  background-color: #fdf6e3;
+  border: 2px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
 }
-.mat-mdc-menu-content {
-  padding: 0 !important;
-}
+
+  .dropdown-menu a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 12px;
+    color: black;
+    font-size: 15pt;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+    .dropdown-menu a:hover {
+      background-color: #4b9cd3;
+      color: white;
+      border-radius: 6px;
+    }

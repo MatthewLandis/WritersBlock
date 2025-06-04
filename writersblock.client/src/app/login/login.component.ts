@@ -24,7 +24,7 @@ export class LoginComponent {
         localStorage.setItem('ID', response.toString());
         localStorage.setItem('username', response.username);
 
-        this.router.navigate(['/write']).then(() => {
+        this.router.navigate(['/home']).then(() => {
           window.location.reload();
         });
       },

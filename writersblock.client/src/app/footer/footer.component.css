@@ -4,9 +4,8 @@ footer {
   align-items: center;
   padding: 1rem;
   margin-top: auto;
-  background-color: #f8f8f8;
+  background-color: #faf0e6;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-  z-index: 10; /* Same level as header */
 }
 
 .footer-left,
@@ -16,8 +15,14 @@ footer {
 }
 
 .footer-nav ul {
-  display: flex;
+    display:flex;
+    margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   gap: 2rem;
+  list-style-type: none;
 }
 
 .footer-nav a {

@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
   selector: 'app-header',
   standalone: false,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   isLoggedIn = false;
-  username: string | null = '';
+  username: string | null = null;
   dropdownOpen = false;
 
   constructor(private router: Router) { }
@@ -25,12 +25,20 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('ID');
-    localStorage.removeItem('USERNAME');
+    localStorage.removeItem('username');
     this.isLoggedIn = false;
     this.username = null;
-    this.dropdownOpen = false;
+    this.router.navigate(['/']);
   }
 
+  openDropdown() {
+    this.dropdownOpen = true;
+  }
+
+  closeDropdown() {
+    setTimeout(() => this.dropdownOpen = false, 150);
+  }
+  
   goHome() {
     this.router.navigate(['/']).then(() => {
       window.location.reload();

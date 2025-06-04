@@ -1,57 +1,7 @@
-<section *ngIf="showSplash">
-  <div class="riseAnimation">
-    <img src="assets/WBLogo.png" style="height: 200px;" />
-    <h1>Writer's Block</h1>
-    <button class="helpButton" (click)="handleHelpClick()">Help, I have Writer’s Block!</button>
-  </div>
+<section>
+  <div class="heading">Hello! Welcome to Writer's Block</div>
+  <p>A fun an intuitive website for writers who have writer's block.</p>
+<div class="featureRow">
 
-  <div class="animated-quotes">
-    <div class="quote"
-         *ngFor="let q of activeQuotes"
-         [style.top.%]="q.top"
-         [style.left.%]="q.left">
-      {{ q.displayedText }}
-    </div>
-  </div>
-</section>
-
-
-<section class="about-page" *ngIf="!showSplash">
-  <div class="riseAnimation">
-    <img src="assets/WBLogo.png" style="height: 200px;" />
-    <h1>Welcome to Writer's Block</h1>
-    <p>
-      Feeling overwhelmed? Too many ideas and concepts to keep track of? Relax — we've got you covered!
-      <br><br>
-      Writer’s Block is your creative sanctuary — a place for writers to stave off writer’s block, find inspiration, and connect with fellow wordsmiths.
-    </p>
-    <button class="textButton primary" routerLink="/write">Start Writing</button>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="assets/WriteLogo.png" style="padding-left: 10px; width: 70px;" />
-        </div>
-        <h2>Write</h2>
-        <p>Use our focused editor to let your ideas flow freely without distraction.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="assets/ReadLogo.png" style="width: 100px;" />
-        </div>
-        <h2>Read</h2>
-        <p>Explore stories, thoughts, and writing journeys shared by others.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="assets/IdeaLogo.png" style="width: 85px;" />
-        </div>
-        <h2>Post</h2>
-        <p>Browse prompts and creative challenges to break your block and start fresh.</p>
-      </div>
-    </div>
-    <div class="cta-box">
-      <p class="quote2">Unlock all features and dive deeper into your creativity.</p>
-      <button class="textButton secondary">Sign Up</button>
-    </div>
-  </div>
+</div>
 </section>
