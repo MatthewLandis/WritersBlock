@@ -21,10 +21,10 @@ export class LoginComponent {
       password: this.registerInfo.password
     }).subscribe({
       next: (response) => {
-        localStorage.setItem('ID', response.toString());
+        localStorage.setItem('ID', response.id.toString());
         localStorage.setItem('username', response.username);
 
-        this.router.navigate(['/home']).then(() => {
+        this.router.navigate(['/']).then(() => {
           window.location.reload();
         });
       },

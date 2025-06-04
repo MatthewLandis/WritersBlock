@@ -35,5 +35,29 @@ namespace writersblock.server.Controllers
 
             return userID != null ? Ok(new { id = userID.ID, username = userID.Username }) : BadRequest("User already exists.");
         }
+
+        [HttpGet("user/{id}")]
+        public async Task<IActionResult> GetUser(int id)
+        {
+            var user = await _userService.GetUserById(id);
+
+            if (user == null) return NotFound("User not found.");
+
+            return Ok(new { id = user.ID, email = user.Email, username = user.Username, password = user.Password });
+        }
+
+
+        //[HttpPut("user")]
+        //public async Task<IActionResult> UpdateUser(int id, [FromBody] User updatedUser)
+        //{
+        //    var existingUser = await _userService.GetUserById(id);
+        //    if (existingUser == null)
+        //        return NotFound("User not found.");
+
+        //    bool success = await _userService.UpdateUser(id, updatedUser);
+
+        //    return success ? Ok("User updated.") : BadRequest("Update failed.");
+        //}
+
     }
 }

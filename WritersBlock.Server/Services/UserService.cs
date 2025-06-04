@@ -26,6 +26,31 @@ namespace WritersBlock.Server.Services
 
             return userID ?? null;
         }
+
+        public async Task<User?> GetUserById(int id)
+        {
+            using Microsoft.Data.SqlClient.SqlConnection c = _sql.WBD;
+            return await c.QuerySingleOrDefaultAsync<User>(
+                "SELECT ID, Email, Username, Password FROM Users WHERE ID = @ID", new { ID = id });
+        }
+
+
+        //public async Task<bool> UpdateUser(int id, User updatedUser)
+        //{
+        //    using Microsoft.Data.SqlClient.SqlConnection c = _sql.WBD;
+
+        //    var affectedRows = await c.ExecuteAsync(
+        //        "UPDATE Users SET Email = @Email, Username = @Username, Password = @Password WHERE ID = @ID",
+        //        new
+        //        {
+        //            ID = id,
+        //            Email = updatedUser.Email,
+        //            Username = updatedUser.Username,
+        //            Password = updatedUser.Password
+        //        });
+
+        //    return affectedRows > 0;
+        //}
     }
 }
 
