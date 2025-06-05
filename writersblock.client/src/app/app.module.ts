@@ -13,6 +13,10 @@ import { WriteComponent } from './write/write.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SettingsComponent } from './settings/settings.component';
+import { InfoComponent } from './info/info.component';
+import { PublicInfoComponent } from './info/public-info/public-info.component';
+import { PrivateInfoComponent } from './info/private-info/private-info.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,6 +35,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginComponent,
     SignupComponent,
     SettingsComponent,
+    InfoComponent,
+    PublicInfoComponent,
+    PrivateInfoComponent,
+    AnalyticsComponent,
   ],
   imports: [
     BrowserModule,

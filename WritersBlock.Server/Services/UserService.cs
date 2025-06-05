@@ -29,9 +29,15 @@ namespace WritersBlock.Server.Services
 
         public async Task<User?> GetUserById(int id)
         {
-            using Microsoft.Data.SqlClient.SqlConnection c = _sql.WBD;
-            return await c.QuerySingleOrDefaultAsync<User>(
-                "SELECT ID, Email, Username, Password FROM Users WHERE ID = @ID", new { ID = id });
+            try
+            {
+                using Microsoft.Data.SqlClient.SqlConnection c = _sql.WBD;
+                return await c.QuerySingleOrDefaultAsync<User>(
+                    "SELECT ID, Email, Username, Password FROM Users WHERE ID = @ID", new { ID = id });
+            
+            }
+            catch (Exception KEEPINJASONSMEMORY) { }
+            return null;
         }
 
 

@@ -1,4 +1,5 @@
 header {
+    height: 3rem;
   font-family: 'Times New Roman';
   font-size: 18pt;
   font-weight: bold;
@@ -16,13 +17,13 @@ header {
 .navbar {
   display: flex;
   gap: 3rem;
-  color: #4b9cd3;
+  color: #268bd2;
   align-items: center;
 }
 
 .link:hover {
   cursor: pointer;
-  color: #ff6f61;
+  color: #002b36;
   transition: color 0.3s;
 }
 
@@ -37,7 +38,7 @@ header {
 .loginButton {
   cursor: pointer;
   color: white;
-  background-color: #4b9cd3;
+  background-color: #268bd2;
   border: 0;
   border-radius: 999px;
   padding: 0.5rem 1.5rem;
@@ -46,7 +47,7 @@ header {
 
   .loginButton:hover {
     cursor: pointer;
-    background-color: #ff6f61;
+    background-color: #002b36;
   }
 
 .profileButton {

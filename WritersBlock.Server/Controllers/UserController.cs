@@ -31,19 +31,19 @@ namespace writersblock.server.Controllers
                 return BadRequest("All fields are required.");
             }
 
-            User? userID = await _userService.LoginUser(request);
+            User? user = await _userService.LoginUser(request);
 
-            return userID != null ? Ok(new { id = userID.ID, username = userID.Username }) : BadRequest("User already exists.");
+            return user != null ? Ok(user) : BadRequest("User already exists.");
         }
 
         [HttpGet("user/{id}")]
         public async Task<IActionResult> GetUser(int id)
         {
-            var user = await _userService.GetUserById(id);
+            User? user = await _userService.GetUserById(id);
 
             if (user == null) return NotFound("User not found.");
 
-            return Ok(new { id = user.ID, email = user.Email, username = user.Username, password = user.Password });
+            return Ok(user);
         }
 
 

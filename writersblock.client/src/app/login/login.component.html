@@ -1,9 +1,17 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="login()" #loginForm="ngForm">
-    <input type="text" name="username" [(ngModel)]="registerInfo.username" placeholder="Username" required>
-    <input type="password" name="password" [(ngModel)]="registerInfo.password" placeholder="Password" required>
-    <button type="submit">Login</button>
-  </form>
-  <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
-</div>
+<section>
+  <div class="left-side">
+    <div class="logo">
+      <h1>hi</h1>
+    </div>
+  </div>
+
+  <div class="right-side">
+    <div class="heading">Login</div>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <input type="text" name="username" [(ngModel)]="registerInfo.username" placeholder="Username" required>
+      <input type="password" name="password" [(ngModel)]="registerInfo.password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+  </div>
+</section>

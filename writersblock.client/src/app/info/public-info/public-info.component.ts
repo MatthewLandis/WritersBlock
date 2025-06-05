@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'app-public-info',
   standalone: false,
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  templateUrl: './public-info.component.html',
+  styleUrl: './public-info.component.css'
 })
-export class SettingsComponent implements OnInit {
+export class PublicInfoComponent implements OnInit {
   accountInformation = {
     username: '',
     email: '',
