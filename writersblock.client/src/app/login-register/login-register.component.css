@@ -1,6 +1,6 @@
 section {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 162px);
 }
 
 .left-side {
@@ -22,7 +22,7 @@ section {
   align-items: center;
 }
 
-.heading {
+h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -64,6 +64,7 @@ p {
 }
 
 a {
+    cursor: pointer;
   color: #268bd2;
   text-decoration: none;
 }

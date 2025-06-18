@@ -1,1 +1,22 @@
-<p>info works!</p>
+<section>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <p class="title">Your Profile</p>
+    <div *ngFor="let section of sections" class="radio-option"
+         [ngClass]="{'selected': selectedSection === section.value,'achievements-option': section.value === 'achievements'}"
+         (click)="selectedSection = section.value">
+      <input type="radio" [value]="section.value" [(ngModel)]="selectedSection" />
+      <label>{{ section.label }}
+        <p class="description">{{ section.description }}</p>
+      </label>
+    </div>
+  </nav>
+  <!-- Center Content -->
+  <main class="content">
+    <app-public-info *ngIf="selectedSection === 'public'"></app-public-info>
+    <app-private-info *ngIf="selectedSection === 'private'"></app-private-info>
+    <app-analytics *ngIf="selectedSection === 'analytics'"></app-analytics>
+    <app-settings *ngIf="selectedSection === 'settings'"></app-settings>
+    <app-achievements *ngIf="selectedSection === 'achievements'"></app-achievements>
+  </main>
+</section>

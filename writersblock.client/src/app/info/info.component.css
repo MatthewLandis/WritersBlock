@@ -1,0 +1,122 @@
+section {
+  display: flex;
+  height: calc(100vh - 162px);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #faf0e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.content {
+  flex: 1;
+  padding: 3rem;
+  background-color: #fdf6e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.radio-option {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+  /* Selected border color */
+  .radio-option.selected {
+    border-color: #268bd2;
+    background-color: #eaf6ff;
+  }
+
+  /* Hide native radio */
+  .radio-option input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+    /* Colored dot for checked state */
+    .radio-option input[type="radio"]:checked::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: #268bd2;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+    }
+
+  /* Selected radio border */
+  .radio-option.selected input[type="radio"] {
+    border-color: #268bd2;
+  }
+
+  .radio-option:hover {
+    background-color: #f0faff;
+  }
+
+
+
+
+label {
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+  label .description {
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: #586e75;
+    font-size: 0.9rem;
+  }
+
+
+/* Achievements - hover */
+.radio-option.achievements-option:hover {
+  background-color: #ffeaea;
+}
+
+/* Achievements - selected state */
+.radio-option.achievements-option.selected {
+  background-color: #ffe5e5;
+  border-color: #e53935;
+}
+
+/* Achievements - checked radio dot */
+.radio-option.achievements-option input[type="radio"]:checked::before {
+  background-color: #e53935;
+}
+
+/* Achievements - selected radio border */
+.radio-option.achievements-option.selected input[type="radio"] {
+  border-color: #e53935;
+}

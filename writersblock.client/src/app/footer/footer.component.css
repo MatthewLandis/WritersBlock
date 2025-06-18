@@ -1,16 +1,17 @@
 footer {
   display: flex;
   justify-content: space-between;
+  height: 5rem;
   align-items: center;
   padding: 1rem;
-  margin-top: auto;
   background-color: #faf0e6;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .footer-left,
 .footer-right {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
 }
 

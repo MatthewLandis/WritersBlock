@@ -1,7 +1,7 @@
 <header>
   <div class="navbar">
     <div class="link" routerLink="/write">Write</div>
-    <div class="link" routerLink="/read">Read</div>
+    <div class="link" routerLink="/library">Read</div>
     <div class="link" routerLink="/tips">Tips</div>
   </div>
   <img src="assets/WBLogo.png" class="logo" (click)="goHome()" />
@@ -9,7 +9,7 @@
     <div class="link" routerLink="/post">Post</div>
     <!--If user is NOT logged in-->
     <div *ngIf="!isLoggedIn">
-      <div class="loginButton" routerLink="/login">Login</div>
+      <div class="loginButton" (click)="goToLogin()">Login</div>
     </div>
     <!--If user is logged in-->
     <div *ngIf="isLoggedIn">

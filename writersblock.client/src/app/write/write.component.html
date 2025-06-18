@@ -1,1 +1,29 @@
-<h2>Write Your Ideas</h2>
+<section>
+  <!-- Sidebar: Drafts -->
+  <div class="sidebar">
+    <div class="title">Your Drafts</div>
+    <ul>
+      <li *ngFor="let draft of savedDrafts" class="draft-entry">
+        <div class="draft-info">
+          <strong>{{ draft.name || ('Draft on ' + (draft.timestamp | date:'short')) }}</strong>
+          <div class="buttons">
+            <button (click)="editDraft(draft)">✏️</button>
+            <button (click)="deleteDraft(draft)">🗑️</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Content: Editor -->
+  <div class="content">
+    <label for="draftName">Title</label>
+    <input id="draftName" [(ngModel)]="draftName" placeholder="Give your draft a title..." />
+
+    <label for="draftText">Content</label>
+    <textarea id="draftText" [(ngModel)]="draftText" placeholder="Start writing..."></textarea>
+
+    <button (click)="saveDraft()" [disabled]="!draftText.trim()">💾 Save Draft</button>
+    <p *ngIf="saveMessage" class="save-message">{{ saveMessage }}</p>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 section {
-  min-height: calc(100vh - 132px);
+  height: calc(100vh - 162px);
   justify-content: center;
   align-items: center;
   background-color: #fdf6e3;

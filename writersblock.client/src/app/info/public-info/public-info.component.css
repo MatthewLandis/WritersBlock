@@ -1,24 +1,14 @@
-.account-section {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf6e3;
-}
-
-.heading {
-  font-size: 2.5rem;
+h1 {
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 2rem;
-  text-align: center;
   color: #073642;
+  margin: 0;
 }
 
 .account-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 0rem 7rem;
 }
 
 .field {
@@ -28,9 +18,8 @@
 
   .field hr {
     width: 100%;
-    border: none;
+    margin-bottom: 1.5rem;
     border-top: 1px solid #ccc;
-    margin-top: 0.75rem;
   }
 
 /* Row that contains text and edit button */
@@ -44,7 +33,7 @@
   font-weight: bold;
   color: #586e75;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .field div {
@@ -59,8 +48,7 @@
   border: none;
   font-weight: 600;
   cursor: pointer;
-  font-size: 0.95rem;
-  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
   transition: color 0.2s ease;
 }
 
@@ -69,10 +57,6 @@
   }
 
 /* Bio section */
-.bio-section {
-  text-align: center;
-}
-
   .bio-section label {
     display: block;
     font-weight: bold;
@@ -81,8 +65,7 @@
   }
 
 textarea {
-  width: 100%;
-  max-width: 600px;
+  width: 97%;
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid #ccc;

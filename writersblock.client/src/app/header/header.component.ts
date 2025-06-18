@@ -44,4 +44,10 @@ export class HeaderComponent {
       window.location.reload();
     });
   }
+
+  goToLogin() {
+    this.router.navigate(['/login-register']).then(() => {
+      window.location.reload();
+    });
+  }
 }

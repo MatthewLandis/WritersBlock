@@ -1,0 +1,31 @@
+<section>
+  <div class="left-side">
+    <div class="logo">
+      <h1>hi</h1>
+    </div>
+  </div>
+
+  <div class="right-side">
+    <!-- Login -->
+    <div *ngIf="loginOrRegister">
+      <h1>Login</h1>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <input type="text" name="username" [(ngModel)]="loginInfo.username" placeholder="Username" required />
+        <input type="password" name="password" [(ngModel)]="loginInfo.password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a (click)="switchAction()">Sign up here</a></p>
+    </div>
+    <!-- Register -->
+    <div *ngIf="!loginOrRegister">
+      <h1>Register</h1>
+      <form (ngSubmit)="register()" #signupForm="ngForm">
+        <input type="text" name="username" [(ngModel)]="registerInfo.username" placeholder="Username" required />
+        <input type="password" name="password" [(ngModel)]="registerInfo.password" placeholder="Password" required />
+        <input type="email" name="email" [(ngModel)]="registerInfo.email" placeholder="Email" required />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a (click)="switchAction()">Log in here</a></p>
+    </div>
+  </div>
+</section>

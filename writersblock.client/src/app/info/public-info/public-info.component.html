@@ -1,6 +1,6 @@
-<section class="account-section">
-  <div class="heading">Account Information</div>
-
+<section>
+  <h1>About Me</h1>
+  <hr />
   <div class="account-grid">
     <div class="field">
       <div class="field-row">
@@ -51,4 +51,35 @@
     <label for="bio">Bio:</label>
     <textarea id="bio" rows="3" placeholder="Tell us something about yourself..."></textarea>
   </div>
+
+
+  <hr style=" border-top: 1px solid #ccc; " />
+  <br />
+
+  <h1>Personalize</h1>
+  <hr class="darkLine" />
+  <div class="account-grid">
+    <div class="field">
+      <div class="field-row">
+        <div>
+          <label>Display Name:</label>
+          <div>{{ accountInformation.displayName }}</div>
+        </div>
+        <button class="edit-btn">Edit</button>
+      </div>
+      <hr />
+    </div>
+
+    <div class="field">
+      <div class="field-row">
+        <div>
+          <label>Username:</label>
+          <div>{{ accountInformation.username }}</div>
+        </div>
+        <button class="edit-btn">Edit</button>
+      </div>
+      <hr />
+    </div>
+  </div>
+
 </section>
